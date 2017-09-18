@@ -34,6 +34,7 @@
 </div>
 
 <script src="/public/assets/jquery/jquery.min.js"></script>
+<script src="/public/assets/jquery-cookie/jquery.cookie.js"></script>
 <script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     $('#loginBtn').click(function () {
@@ -47,7 +48,8 @@
             success: function (data) {
 //                console.log(data);
                 if(data.code==200){
-                    location.href='main/index';
+                    $.cookie('loginInfo',JSON.stringify(data.result),{path:'/'});
+                    location.href='/main/index';
                 }
             }
         });
