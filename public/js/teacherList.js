@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/9/20.
  */
-define(['jquery','template'],function($,template){
+define(['jquery','template','bootstrap'],function($,template){
     $.ajax({
         type:'get',
         url:'/api/teacher',
@@ -33,6 +33,24 @@ define(['jquery','template'],function($,template){
                     }
                 })
             });
+            $('.preview').click(function(){
+                var td=$(this).closest('td');
+                var tcId=td.attr('data-tcId');
+                $.ajax({
+                    type:'post',
+                    url:'/api/teacher/view',
+                    data:{tc_id:tcId},
+                    dataType:'json',
+                    success:function(data){
+                        //console.log(data);
+
+                        var html=template('modalTpl',data.result);
+                        $('#modalInfo').html(html);
+
+                        $('#teacherModal').modal();
+                    }
+                })
+            })
         }
     })
 });
