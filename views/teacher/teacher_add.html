@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include('./views/common/style.html'); ?>
+    <link rel="stylesheet" href="/public/assets/bootstrap-datepicker/css/bootstrap-datepicker.css"/>
 </head>
 <body>
 
@@ -47,7 +48,7 @@
                 <label  class="col-xs-3 control-label">入职时间</label>
 
                 <div class="col-xs-4">
-                    <input name="tc_join_date" type="text" class="form-control input-sm" value="{{tc_join_date}}">
+                    <input name="tc_join_date" data-provide="datepicker" data-date-language="zh-CN" data-date-format="yyyy-mm-dd" data-date-end-date="0d" type="text" class="form-control input-sm" value="{{tc_join_date}}">
                 </div>
             </div>
             <div class="form-group">
