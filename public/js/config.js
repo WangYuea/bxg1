@@ -8,9 +8,11 @@ require.config({
         cookie:'jquery-cookie/jquery.cookie',
         template:'artTemplate/template-web',
         bootstrap:'bootstrap/js/bootstrap',
+        util:'../js/util',
         common:'../js/common',
         login:'../js/login',
-        teacherList:'../js/teacherList'
+        teacherList:'../js/teacherList',
+        teacherAdd:'../js/teacherAdd'
     },
     shim:{
         bootstrap:{
