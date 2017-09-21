@@ -17,7 +17,7 @@ define(['jquery','template','cookie'],function($,tempalte){
 			}
 		});
 	});
-	//验证用户是否登录
+	//楠岃瘉鐢ㄦ埛鏄惁鐧诲綍
 	var flag= $.cookie('PHPSESSID');
 	//console.log(flag);
 	if(!flag&&location.pathname!='/main/login'){
