@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/9/21.
  */
-define(['jquery','template','util','datepicker','language'],function($,template,util){
+define(['jquery','template','util','datepicker','language','validate','form'],function($,template,util){
     var tcId=util.qs('tc_id');
     //console.log(tcId);
     if(tcId){
@@ -12,7 +12,7 @@ define(['jquery','template','util','datepicker','language'],function($,template,
             data:{tc_id:tcId},
             dataType:'json',
             success:function(data){
-                console.log(data);
+                //console.log(data);
                 data.result.operate='编辑讲师';
                 var html=template('teacherTpl',data.result);
                 $('#teacherInfo').html(html);
@@ -25,21 +25,51 @@ define(['jquery','template','util','datepicker','language'],function($,template,
         $('#teacherInfo').html(html);
         submitForm('/api/teacher/add');
     }
-    //提交表单
+//基础表单验证插件和表单提交插件进行表单提交
     function submitForm(url){
-        $('#teacherBtn').click(function(){
-            $.ajax({
-                type:'post',
-                url:url,
-                data:$('#teacherForm').serialize(),
-                dataType:'json',
-                success:function(data){
-                    console.log(data);
-                    if(data.code==200){
+        $('#teacherForm').validate({
+            sendForm:false,
+            valid:function(){
+                //console.log('success');
+                $(this).ajaxSubmit({
+                    url:url,
+                    dataType:'json',
+                    success:function(data){
+                        if(data.code==200){
                         location.href='/teacher/teacher_list';
+                        }
                     }
+                });
+            },
+            description:{
+                tcName:{
+                    required:'用户名不能为空'
+                },
+                tcPass:{
+                    required:'密码不能为空',
+                    pattern:'必须是6位数字'
+                },
+                tcJoinDate:{
+                    required:'日期不能为空'
                 }
-            });
-        });
+            }
+        })
     }
+    //提交表单
+    //function submitForm(url){
+    //    $('#teacherBtn').click(function(){
+    //        $.ajax({
+    //            type:'post',
+    //            url:url,
+    //            data:$('#teacherForm').serialize(),
+    //            dataType:'json',
+    //            success:function(data){
+    //                console.log(data);
+    //                if(data.code==200){
+    //                    location.href='/teacher/teacher_list';
+    //                }
+    //            }
+    //        });
+    //    });
+    //}
 });

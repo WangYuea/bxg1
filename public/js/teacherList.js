@@ -7,7 +7,7 @@ define(['jquery','template','bootstrap'],function($,template){
         url:'/api/teacher',
         dataType:'json',
         success:function(data){
-            //console.log(data);
+            console.log(data);
             var html=template('teacherTpl',{list:data.result});
             $('#teacherInfo').html(html);
             $('.eod').click(function(){
