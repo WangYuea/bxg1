@@ -16,7 +16,8 @@ require.config({
         common: '../js/common',
         login: '../js/login',
         teacherList: '../js/teacherList',
-        teacherAdd: '../js/teacherAdd'
+        teacherAdd: '../js/teacherAdd',
+        settings:'../js/settings'
     },
     shim: {
         bootstrap: {
