@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/9/22.
  */
-define(['jquery','template','uploadify'],function($,template){
+define(['jquery','template','uploadify','region'],function($,template){
     $.ajax({
         type:'get',
         url:'/api/teacher/profile',
@@ -25,6 +25,10 @@ define(['jquery','template','uploadify'],function($,template){
                     console.log(b);
                     $('.preview img').attr('src',obj.result.path);
                 }
+            });
+            //省市县三级联动
+            $('#pcd').region({
+               url:'/public/assets/jquery-region/region.json'
             });
         }
     })
