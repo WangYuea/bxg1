@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/9/22.
  */
-define(['jquery','template','uploadify','region'],function($,template){
+define(['jquery','template','ckeditor','uploadify','region','datepicker','language'],function($,template,CKEDITOR){
     $.ajax({
         type:'get',
         url:'/api/teacher/profile',
@@ -10,6 +10,7 @@ define(['jquery','template','uploadify','region'],function($,template){
             //console.log(data);
             var html=template('settingsTpl',data.result);
             $('#settingsInfo').html(html);
+            CKEDITOR.replace('editor');
             //处理头像上传
             $('#upfile').uploadify({
                 swf:'/public/assets/uploadify/uploadify.swf',
