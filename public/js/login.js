@@ -18,7 +18,7 @@ define(['jquery','cookie'], function ($) {
                 }
             }
         });
-//        ×èÖ¹Ä¬ÈÏÐÐÎª
+//
         return false;
     });
 });

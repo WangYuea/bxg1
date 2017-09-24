@@ -22,7 +22,8 @@ require.config({
         teacherAdd: '../js/teacherAdd',
         settings:'../js/settings',
         courseAdd:'../js/courseAdd',
-        index:'../js/index'
+        index:'../js/index',
+        courseList:'../js/courseList'
     },
     shim: {
         bootstrap: {
