@@ -40,8 +40,10 @@ define(['jquery','template','ckeditor','uploadify','region','datepicker','langua
                     var d=$("#d").find('option:selected').text();
                     var hometown=p+'|'+c+'|'+d;
                     //更新文本内容
+                    console.log(CKEDITOR.instances);
                     for(var instance in CKEDITOR.instances){
                         CKEDITOR.instances[instance].updateElement();
+                        console.log(1);
                     }
                     //console.log(p);
                     //提交表单
@@ -55,6 +57,7 @@ define(['jquery','template','ckeditor','uploadify','region','datepicker','langua
                         success:function(data){
                             //console.log(data);
                             if(data.code==200){
+                                console.log(data);
                                 location.reload();
                             }
                         }

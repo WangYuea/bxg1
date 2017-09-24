@@ -3,6 +3,9 @@
  */
 define(['jquery'],function($){
     return {
+        setMenu:function(path){
+            $('.aside .navs a[href="'+path+'"]').addClass('active');
+        },
         qs:function(key){
             var param=location.search.substr(1);
             //console.log(param);
