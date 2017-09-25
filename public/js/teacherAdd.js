@@ -2,6 +2,7 @@
  * Created by Administrator on 2017/9/21.
  */
 define(['jquery','template','util','datepicker','language','validate','form'],function($,template,util){
+    //获取tc_id
     var tcId=util.qs('tc_id');
     //console.log(tcId);
     if(tcId){
@@ -41,6 +42,7 @@ define(['jquery','template','util','datepicker','language','validate','form'],fu
                     }
                 });
             },
+            //文字信息描述
             description:{
                 tcName:{
                     required:'用户名不能为空'

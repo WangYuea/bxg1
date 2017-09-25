@@ -24,8 +24,10 @@ require.config({
         index:'../js/index',
         courseList:'../js/courseList',
         courseAdd:'../js/courseAdd',
-        courseBasic:'../js/courseBasic'
+        courseBasic:'../js/courseBasic',
+        coursePicture:'../js/coursePicture'
     },
+    //处理不是标准的define
     shim: {
         bootstrap: {
             deps: ['jquery']

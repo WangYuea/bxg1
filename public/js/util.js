@@ -3,9 +3,11 @@
  */
 define(['jquery'],function($){
     return {
+        //设置菜单选中
         setMenu:function(path){
             $('.aside .navs a[href="'+path+'"]').addClass('active').closest('ul').show();
         },
+        //处理url地址中的数据
         qs:function(key){
             var param=location.search.substr(1);
             //console.log(param);

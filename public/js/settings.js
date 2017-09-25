@@ -2,16 +2,19 @@
  * Created by Administrator on 2017/9/22.
  */
 define(['jquery','template','ckeditor','uploadify','region','datepicker','language','validate','form'],function($,template,CKEDITOR){
+    //获取个人中心的数据
     $.ajax({
         type:'get',
         url:'/api/teacher/profile',
         dataType:'json',
         success:function(data){
             //console.log(data);
+            //根据数据渲染页面
             var html=template('settingsTpl',data.result);
             $('#settingsInfo').html(html);
+            //富文本编辑器
             CKEDITOR.replace('editor');
-            //处理头像上传
+            //处理头像上传 使用uploadify
             $('#upfile').uploadify({
                 swf:'/public/assets/uploadify/uploadify.swf',
                 uploader:'/api//uploader/avatar',
@@ -26,11 +29,11 @@ define(['jquery','template','ckeditor','uploadify','region','datepicker','langua
                     $('.preview img').attr('src',obj.result.path);
                 }
             });
-            //省市县三级联动
+            //省市县三级联动 使用region
             $('#pcd').region({
                url:'/public/assets/jquery-region/region.json'
             });
-            //处理表单提交
+            //处理表单提交 使用validate
             $('#settingsForm').validate({
                 sendForm:false,
                 valid: function () {
@@ -46,7 +49,7 @@ define(['jquery','template','ckeditor','uploadify','region','datepicker','langua
                         console.log(1);
                     }
                     //console.log(p);
-                    //提交表单
+                    //提交表单  使用form
                     $(this).ajaxSubmit({
                        type:'post',
                         url:'/api/teacher/modify',

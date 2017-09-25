@@ -1,10 +1,11 @@
 define(['jquery','template','cookie'],function($,tempalte){
 	//NProgress.start();
 	//NProgress.done();
+	//控制左侧折叠显示隐藏
 	$('.navs ul').prev('a').on('click', function () {
 		$(this).next().slideToggle();
 	});
-
+	//输入用户名和密码跳转到首页
 	$('#logoutBtn').click(function(){
 		$.ajax({
 			type:'post',
