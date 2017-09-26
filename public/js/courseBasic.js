@@ -57,7 +57,6 @@ define(['jquery', 'template', 'util', 'validate', 'form'], function ($, template
                         success: function (data) {
                             //console.log(data);
                             location.href = '/course/picture?cs_id=' + data.result.cs_id;
-
                         }
                     });
                 }

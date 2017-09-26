@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <?php include('./views/common/style.html'); ?>
     <title>学IT - 后台管理系统</title>
+    <?php include('./views/common/style.html'); ?>
+    <link rel="stylesheet" href="/public/assets/jcrop/css/Jcrop.min.css"/>
 </head>
 <body>
     
@@ -19,6 +20,12 @@
 
             </div>
         </div>
+        <form id="cropForm" style="display: none">
+            <input type="text" name="x">
+            <input type="text" name="y">
+            <input type="text" name="w">
+            <input type="text" name="h">
+        </form>
     </div>
 <script type="text/template" id="pictureTpl">
     <ol class="breadcrumb">
@@ -30,7 +37,7 @@
         <div class="brief">
             <div class="thumb">
                 {{if cs_cover}}
-                <img src="{{cs_cover}}" alt="">
+                <img src="{{cs_cover}}">
                 {{/if}}
             </div>
             <dl class="info">
@@ -53,7 +60,7 @@
                 </a>
             </li>
             <li>
-                <a href="./course_add_step3.html">
+                <a href="lesson.html">
                     <b>3</b>
                     课时管理
                 </a>
@@ -79,10 +86,10 @@
                 </p>
                 <div class="col-xs-2">
                     <input type="file" id="myfile">
-                    <!--<a href="./course_add_step3.html" class="btn btn-success btn-sm">选择图片</a>-->
+                    <!--<a href="./lesson.html" class="btn btn-success btn-sm">选择图片</a>-->
                 </div>
                 <div class="col-xs-2">
-                    <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+                    <a href="javascript:;" class="btn btn-warning btn-sm" id="cropBtn">裁切图片</a>
                 </div>
             </div>
         </div>

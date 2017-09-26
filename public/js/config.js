@@ -15,6 +15,7 @@ require.config({
         uploadify:'uploadify/jquery.uploadify.min',
         region:'jquery-region/jquery.region',
         ckeditor:'ckeditor/ckeditor',
+        jcrop:'jcrop/js/Jcrop',
         util: '../js/util',
         common: '../js/common',
         login: '../js/login',
@@ -25,7 +26,8 @@ require.config({
         courseList:'../js/courseList',
         courseAdd:'../js/courseAdd',
         courseBasic:'../js/courseBasic',
-        coursePicture:'../js/coursePicture'
+        coursePicture:'../js/coursePicture',
+        courseLesson:'../js/courseLesson'
     },
     //处理不是标准的define
     shim: {
@@ -43,6 +45,9 @@ require.config({
         },
         ckeditor:{
             exports:'CKEDITOR'
+        },
+        jcrop:{
+            deps:['jquery']
         }
     }
 });
