@@ -70,7 +70,7 @@ define(['jquery', 'template', 'util', 'uploadify', 'jcrop', 'form'], function ($
                     aspectRatio: 2
                 }, function () {
                     //销毁当前实例，插件自带的方法
-                    //第一进来的时候不执行
+                    //第一进来的时候不执行f
                     nowCrop && nowCrop.destroy();
                     nowCrop = this;
                     //删除默认的图片
