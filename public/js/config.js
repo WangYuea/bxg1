@@ -16,6 +16,7 @@ require.config({
         region:'jquery-region/jquery.region',
         ckeditor:'ckeditor/ckeditor',
         jcrop:'jcrop/js/Jcrop',
+        echarts:'echarts/echarts.min',
         util: '../js/util',
         common: '../js/common',
         login: '../js/login',
@@ -27,7 +28,9 @@ require.config({
         courseAdd:'../js/courseAdd',
         courseBasic:'../js/courseBasic',
         coursePicture:'../js/coursePicture',
-        courseLesson:'../js/courseLesson'
+        courseLesson:'../js/courseLesson',
+        state:'../js/state',
+        userList:'../js/userList'
     },
     //处理不是标准的define
     shim: {

@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/9/20.
  */
-define(['jquery', 'template', 'util', 'bootstrap'], function ($, template, util) {
+define(['jquery', 'template', 'util', 'bootstrap','state'], function ($, template, util) {
     //console.log(location.pathname);
     //$('.aside .navs a[href="'+location.pathname+'"]').addClass('active');
     //处理菜单导航选中

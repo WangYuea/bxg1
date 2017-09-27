@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/9/24.
  */
-define(['jquery','template','util'],function($,template,util){
+define(['jquery','template','util','state'],function($,template,util){
     //处理导航菜单选中
 util.setMenu(location.pathname);
     //获取课程列表数据
