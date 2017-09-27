@@ -97,13 +97,13 @@ define(['jquery', 'template', 'util', 'uploadify', 'jcrop', 'form'], function ($
                 });
                 //监控选区的变化
                 img.parent().on('cropstart cropmove cropend', function (a, b, c) {
-                    //console.log(c);
+                    console.log(c);
                     //选区完成和变化的时候把对应的坐标和数据填充到表单里
-                    var aInput = $('#cropForm').find('input');
-                    aInput.eq(0).val(c.x);
-                    aInput.eq(1).val(c.y);
-                    aInput.eq(2).val(c.w);
-                    aInput.eq(3).val(c.h);
+                    //var aInput = $('#cropForm').find('input');
+                    //aInput.eq(0).val(c.x);
+                    //aInput.eq(1).val(c.y);
+                    //aInput.eq(2).val(c.w);
+                    //aInput.eq(3).val(c.h);
                 });
             }
         }
